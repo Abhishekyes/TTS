@@ -1,0 +1,2 @@
+
+<_io.TextIOWrapper name='D:\\text2speech\\TTS\\text_to_speech\\artifat\\tts_text\\userinput.txt' mode='a+' encoding='cp1252'>

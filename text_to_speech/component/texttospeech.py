@@ -21,13 +21,15 @@ class TTSapplication():
     def text2speech(self,text,accent):
         try:
             text_filename= TEXT_FILE_NAME
-            text_filepath = os.path.join(self.text_dir,TEXT_FILE_NAME)
+            text_filepath = os.path.join(self.text_dir,text_filename)
+            os.makedirs(self.text_dir,exist_ok=True)
             with open(text_filepath,'a+') as text:
                 text.write(f'\n{text}')
         
             tts = gTTS(text=text,lang='en', tid = accent,slow =False)
             
             file_name = f"converted_file_{CURRENT_TIME_STAMP}.mp3"
+            os.makedirs(self.audio_dir,exist_ok=True)
             audio_path = os.path.join(self.audio_dir,file_name)
             
             tts.save(audio_path)
